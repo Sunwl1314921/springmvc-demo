@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 配置包扫描器 -->
+    <context:component-scan base-package="com.controller"/>
+    <!-- 配置注解驱动 -->
+    <mvc:annotation-driven/>
+
+    <!--配置视图解析器返回.html文件错误解决方法：-->
+    <!--解决方法有三种：-->
+    <!--第一种，使用标题配置“html”视图解析器这样配置，个人推荐这种配置。注意这种配置html是没有前缀属性的，所以需要先配置freemarkerConfig，前缀保存在freemarkerConfig中。-->
+    <!--第二种，在web.xml中加入下面代码，表示对静态资源.html不拦截。   -->
+    <!--<servlet-mapping>         -->
+        <!--<servlet-name>default</servlet-name>        -->
+        <!--<url-pattern>*.html</url-pattern>    -->
+    <!--</servlet-mapping>-->
+    <!--第三种，使用-->
+    <!--<mvc:resources location="/" mapping="/**/*.html"/>-->
+
+    <!-- 视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"></property>
+        <property name="suffix" value=".html" />
+        <property name="order" value="0"></property>
+        <property name="contentType" value="text/html;charset=UTF-8"></property>
+    </bean>
+
+
+
+</beans>
