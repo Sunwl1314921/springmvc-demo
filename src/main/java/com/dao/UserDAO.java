@@ -13,4 +13,8 @@ public interface UserDAO {
     Integer addUser(@Param("user") User user);
 
     Integer getUserCount();
+
+    @Insert("INSERT INTO user (name, passwd, appid) value (#{user.name}, #{user.passwd}, #{user.appid})")
+    @SelectKey(before = false, keyProperty = "user.id", resultType = Integer.class, statementType = StatementType.STATEMENT, statement = "SELECT LAST_INSERT_ID() AS id")
+    Integer insertUser(@Param("user") User user);
 }
