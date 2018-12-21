@@ -2,7 +2,7 @@ package com.test.wangluobiancheng;
 import java.net.InetAddress;
 
 /**
- * @Author ：SunWenLong
+ * @Author ：xiaoyijia
  * @Date ：2018/12/20
  */
 public class MyInteAddress {
