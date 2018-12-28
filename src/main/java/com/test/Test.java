@@ -16,6 +16,6 @@ public class Test {
         UserService user = applicationContext.getBean(UserService.class);
         User u = new User(1, "三四十", "123pass", "123app");
         user.addUser(u);
-        //aaaaaaa
+        //aaaaaaa   bbbb
     }
 }
