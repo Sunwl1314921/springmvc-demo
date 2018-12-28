@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public Integer insertUser(User user) {
         Integer result = userDAO.insertUser(user);
-        int i=1/0;
+        //int i=1/0;
         return result;
     }
 }
